@@ -134,8 +134,7 @@ searchInput.addEventListener("input", (e) => {
     const value = e.target.value.toLowerCase();
     allAdvisories.forEach(advisory => {
         const isVisible = advisory.name.toLowerCase().includes(value) || advisory.serviceType.toLowerCase().includes(value) ||
-                          advisory.deliveryFormat.toLowerCase().includes(value) || advisory.annualFee.toLowerCase().includes(value) ||
-                          advisory.active.toLowerCase().includes(value);
+                          advisory.deliveryFormat.toLowerCase().includes(value) || mapActiveFromBoolToText(advisory.active).toLowerCase().includes(value);
         if (isVisible) {
             advisory.element.style.display = "";
         } else {
