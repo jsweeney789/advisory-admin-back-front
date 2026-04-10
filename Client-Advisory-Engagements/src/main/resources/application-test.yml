@@ -1,0 +1,22 @@
+spring:
+    application:
+        ansi:
+            enabled: always
+    datasource:
+        url: jdbc:postgresql://localhost:5432/advisory_manager_test
+        # need to do some password shit, lowkey wasn't paying attentino watch video
+        username: postgres
+        password: Or35qm356!
+        driver-class-name: org.postgresql.Driver
+
+    jpa:
+        database: postgresql
+        data-platform: org.hibernate.dialect.postgresql 
+        defer-datasource-initialization: true          
+        
+        
+        hibernate:
+            # tells hibernate how to handle DDL with your objects
+            ddl-auto: update   # hibernate will create the schema from our models and then drop them when the session ends
+            dialiect: org.hibernate.dialect.PostgreSQLDialect
+
